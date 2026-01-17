@@ -1,0 +1,280 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Base layout */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Real-site style background (dark blue gradient) */
+
+body.dark {
+  background-image: linear-gradient(135deg, #020617 0%, #111827 40%, #1d4ed8 100%);
+  color: #e5e7eb;
+}
+
+body.light {
+  background-image: linear-gradient(135deg, #e0f2fe 0%, #ffffff 40%, #e5e7eb 100%);
+  color: #111827;
+}
+
+/* Optional: if you want an image instead of gradient, comment the gradients above
+   and use something like:
+   body.dark {
+     background: url("your-image.jpg") no-repeat center center fixed;
+     background-size: cover;
+   }
+   [web:53][web:63]
+*/
+
+.app {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  align-items: flex-start;
+}
+
+/* Top bar */
+
+.top-bar {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.top-btn {
+  border: none;
+  background: rgba(15, 23, 42, 0.8);
+  color: #f9fafb;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+body.light .top-btn {
+  background: rgba(15, 23, 42, 0.9);
+  color: #f9fafb;
+}
+
+.top-btn.small {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.6rem;
+}
+
+.top-btn:hover {
+  opacity: 0.9;
+}
+
+/* Calculator card */
+
+.calculator {
+  background: rgba(15, 23, 42, 0.95);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+  width: 260px;
+  backdrop-filter: blur(10px);
+}
+
+body.light .calculator {
+  background: rgba(249, 250, 251, 0.96);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.25);
+}
+
+/* Display */
+
+.calculator-display {
+  background: #020617;
+  color: #f9fafb;
+  font-size: 2rem;
+  padding: 0.75rem;
+  text-align: right;
+  border-radius: 0.7rem;
+  margin-bottom: 0.6rem;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+body.light .calculator-display {
+  background: #111827;
+  color: #f9fafb;
+}
+
+/* Memory keys row */
+
+.memory-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Main keypad grid */
+
+.calculator-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.5rem;
+}
+
+/* Buttons */
+
+.btn {
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.65rem 0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease, box-shadow 0.15s ease;
+  background: #1f2937;
+  color: #e5e7eb;
+  box-shadow: 0 3px 0 rgba(15, 23, 42, 0.7);
+}
+
+body.light .btn {
+  background: #e5e7eb;
+  color: #111827;
+  box-shadow: 0 3px 0 rgba(148, 163, 184, 0.9);
+}
+
+.btn:hover {
+  background: #374151;
+}
+
+body.light .btn:hover {
+  background: #d1d5db;
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.7);
+}
+
+/* 0 spans two columns */
+
+.zero {
+  grid-column: span 2;
+}
+
+/* Button categories */
+
+.operator {
+  background: #f59e0b;
+  color: #111827;
+}
+
+.operator:hover {
+  background: #fbbf24;
+}
+
+.equal {
+  background: #10b981;
+  color: #022c22;
+}
+
+.equal:hover {
+  background: #34d399;
+}
+
+.clear {
+  background: #ef4444;
+  color: #f9fafb;
+}
+
+.clear:hover {
+  background: #f97373;
+}
+
+.percent,
+.backspace,
+.dot,
+.mem {
+  background: #4b5563;
+}
+
+.percent:hover,
+.backspace:hover,
+.dot:hover,
+.mem:hover {
+  background: #6b7280;
+}
+
+body.light .percent,
+body.light .backspace,
+body.light .dot,
+body.light .mem {
+  background: #e5e7eb;
+}
+
+body.light .percent:hover,
+body.light .backspace:hover,
+body.light .dot:hover,
+body.light .mem:hover {
+  background: #d1d5db;
+}
+
+/* History panel */
+
+.history {
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  width: 190px;
+  border-radius: 1rem;
+  padding: 0.8rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+}
+
+body.light .history {
+  background: rgba(249, 250, 251, 0.96);
+  color: #111827;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.25);
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.history-list {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 260px;
+  padding-right: 0.2rem;
+}
+
+.history-item {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.1rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+  cursor: pointer;
+}
+
+.history-item:hover {
+  background: rgba(148, 163, 184, 0.18);
+}

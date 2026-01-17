@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Advanced Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+  <div class="app">
+    <div class="top-bar">
+      <span class="app-title">Calculator</span>
+      <button id="themeToggle" class="top-btn">Light</button>
+    </div>
+
+    <div class="calculator">
+      <div class="calculator-display" id="display">0</div>
+
+      <!-- Memory row -->
+      <div class="memory-keys">
+        <button class="btn mem" data-mem="MC">MC</button>
+        <button class="btn mem" data-mem="MR">MR</button>
+        <button class="btn mem" data-mem="M+">M+</button>
+        <button class="btn mem" data-mem="M-">M-</button>
+      </div>
+
+      <!-- Main keypad -->
+      <div class="calculator-keys">
+        <!-- Row 1 -->
+        <button class="btn operator" data-op="+">+</button>
+        <button class="btn operator" data-op="-">-</button>
+        <button class="btn operator" data-op="*">×</button>
+        <button class="btn operator" data-op="/">/</button>
+
+        <!-- Row 2 -->
+        <button class="btn number" data-num="7">7</button>
+        <button class="btn number" data-num="8">8</button>
+        <button class="btn number" data-num="9">9</button>
+        <button class="btn clear" data-action="clear">C</button>
+
+        <!-- Row 3 -->
+        <button class="btn number" data-num="4">4</button>
+        <button class="btn number" data-num="5">5</button>
+        <button class="btn number" data-num="6">6</button>
+        <button class="btn backspace" data-action="backspace">⌫</button>
+
+        <!-- Row 4 -->
+        <button class="btn number" data-num="1">1</button>
+        <button class="btn number" data-num="2">2</button>
+        <button class="btn number" data-num="3">3</button>
+        <button class="btn percent" data-action="percent">%</button>
+
+        <!-- Row 5 -->
+        <button class="btn number zero" data-num="0">0</button>
+        <button class="btn dot" data-num=".">.</button>
+        <button class="btn equal" data-action="equals">=</button>
+      </div>
+    </div>
+
+    <!-- History panel -->
+    <div class="history">
+      <div class="history-header">
+        <span>History</span>
+        <button id="clearHistory" class="top-btn small">Clear</button>
+      </div>
+      <div id="historyList" class="history-list"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
